@@ -1,4 +1,5 @@
-﻿using static C__Assignment_1_OOP_.Program;
+﻿using System.Xml.Linq;
+using static C__Assignment_1_OOP_.Program;
 
 namespace C__Assignment_1_OOP_
 {
@@ -166,8 +167,47 @@ namespace C__Assignment_1_OOP_
         //    double deltaY = p2.Y - p1.Y;
         //    return Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
         //}
-    #endregion
-}
+        #endregion
+
+        #region Q7 
+
+        public struct Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+
+            public Person(string name, int age)
+            {
+                Name = name;
+                Age = age;
+            }
+        }
+        public static void Main()
+        {
+            Person[] persons = new Person[3];
+
+            persons[0] = new Person("Ali", 25);
+            persons[1] = new Person("Omar", 24);
+            persons[2] = new Person("Hamza", 21);
+
+
+            Person oldest = persons[4];
+            for (int i = 1; i < persons.Length; i++)
+            {
+                if (persons[i].Age > oldest.Age)
+                {
+                    oldest = persons[i];
+                }
+            }
+
+            // Display the name and age of the oldest person
+            Console.WriteLine($"The oldest person is {oldest.Name} with an age of {oldest.Age}.");
+
+        }
+
+
+        #endregion
+    }
 }
 
 
